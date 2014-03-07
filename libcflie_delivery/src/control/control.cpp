@@ -334,17 +334,21 @@ void* main_control( void * param ) {
 
 /*EXTENSION*/
 //CITE: http://www.programming-techniques.com/2012/05/font-rendering-in-glut-using-bitmap.html
-static void resize(int width, int height)
-{
+
+//resizes the viewport
+static void resize(int width, int height){
     const float ar = (float) width / (float) height;
     w = width;
     h = height;
     glViewport(0, 0, width, height);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glFrustum(-ar, ar, -1.0, 1.0, 2.0, 100.0);     glMatrixMode(GL_MODELVIEW);
+    glFrustum(-ar, ar, -1.0, 1.0, 2.0, 100.0);     
+    glMatrixMode(GL_MODELVIEW);
     glLoadIdentity() ;
 } 
+
+//prints the characters in a string in the correct direction and spacing
 void setOrthographicProjection() {
     glMatrixMode(GL_PROJECTION);
     glPushMatrix();
@@ -354,11 +358,15 @@ void setOrthographicProjection() {
     glTranslatef(0, -h, 0);
     glMatrixMode(GL_MODELVIEW);
 } 
+
+//screen refresh helper
 void resetPerspectiveProjection() {
     glMatrixMode(GL_PROJECTION);
     glPopMatrix();
     glMatrixMode(GL_MODELVIEW);
 } 
+
+//Renders the string as a set of characters
 void renderBitmapString(float x, float y, void *font,const char *string){
     const char *c;
     glRasterPos2f(x, y);
@@ -366,12 +374,19 @@ void renderBitmapString(float x, float y, void *font,const char *string){
         glutBitmapCharacter(font, *c);
     }
 } 
+
+//display function 
 static void display(void){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    //set the color to red
     glColor3d(1.0, 0.0, 0.0);
+
+    //start changes
     setOrthographicProjection();
     glPushMatrix();
     glLoadIdentity();
+
+    //print stats
     renderBitmapString(20,20,(void *)font,"Copter Battery Life");
     renderBitmapString(300,100,(void *)font,"Acceleration X");
     renderBitmapString(300,200,(void *)font,"Acceleration Y");
@@ -380,6 +395,7 @@ static void display(void){
     renderBitmapString(300,300,(void *)font,"Altitude");
     renderBitmapString(300,350,(void *)font,"Pressure");
 
+    //draw battery shell
     int i = 60;
     renderBitmapString(20,i-20,(void *)font,"        _____");
     renderBitmapString(20,i-10,(void *)font,"        |   |");
@@ -392,14 +408,12 @@ static void display(void){
     renderBitmapString(20,i-40,(void *)font,"          -");
     renderBitmapString(20,i,(void *)font,"____________________");
 
-    //CODE SNIPPET
-
+    //fill battery
     i = 0;
     while (i < batteryPercent){
 
     glColor3d(1.0 - batteryPercent/100.0, batteryPercent/100, 0.0);
     renderBitmapString(29,300 - ((i/100.0)*300) + 60,(void *)font,"@@@@@@@@@@@@@@@@@@");
-    //printf("%f\n",300 - ((i/100.0)*300) + 60);
     i+= 5;
     }
 
@@ -408,18 +422,19 @@ static void display(void){
     //print battery percent
     renderBitmapString(20,420, (void*)font, p);
 
-    //SNIPPET
-
+    //end changes
     glPopMatrix();
     resetPerspectiveProjection();
     glutSwapBuffers();
 } 
 
+//Gets the stats and calls redisplay every second
 void update(int value){
     batteryLevel = (rand() / (double)RAND_MAX) * 4;
     sprintf(b, "batteryLevel : %f", batteryLevel );
     batteryPercent = 100.0 * (batteryLevel / 4 );
     sprintf(p, "batteryPercent : %d%%", (int)batteryPercent );
+    //1000 ms timer to call update
     glutTimerFunc(1000, update, 0);
     glutPostRedisplay();
 } 
