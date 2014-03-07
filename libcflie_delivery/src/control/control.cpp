@@ -41,10 +41,27 @@
 //NOTE: for windows switch this to GL/glut.h
 int w, h;
 const int font=(int)GLUT_BITMAP_9_BY_15;
-char b[30]; 
-char p[30]; 
+
+char batteryLevelString[30]; 
+char batteryPercentString[30]; 
 double batteryLevel;
 double batteryPercent;
+char batteryStateString[30]; 
+float batteryState;
+
+char pressureString[30]; 
+char temperatureString[30]; 
+float pressure;
+float temperature;
+char accelerationString[30]; 
+char altitudeString[30]; 
+float accX;
+float accY;
+float accZ;
+float altitude;
+
+#define MAXBATTERYLEVEL 4
+
 /*EXTENSION*/
 
 
@@ -388,12 +405,11 @@ static void display(void){
 
     //print stats
     renderBitmapString(20,20,(void *)font,"Copter Battery Life");
-    renderBitmapString(300,100,(void *)font,"Acceleration X");
-    renderBitmapString(300,200,(void *)font,"Acceleration Y");
-    renderBitmapString(300,150,(void *)font,"Acceleration Z");
-    renderBitmapString(300,250,(void *)font,"Temperature");
-    renderBitmapString(300,300,(void *)font,"Altitude");
-    renderBitmapString(300,350,(void *)font,"Pressure");
+    renderBitmapString(300,100,(void *)font,accelerationString);
+    renderBitmapString(300,150,(void *)font,batteryStateString);
+    renderBitmapString(300,200,(void *)font,temperatureString);
+    renderBitmapString(300,250,(void *)font,altitudeString);
+    renderBitmapString(300,300,(void *)font,pressureString);
 
     //draw battery shell
     int i = 60;
@@ -418,9 +434,9 @@ static void display(void){
     }
 
     //print battery level
-    renderBitmapString(20,400, (void*)font, b);
+    renderBitmapString(20,400, (void*)font, batteryLevelString);
     //print battery percent
-    renderBitmapString(20,420, (void*)font, p);
+    renderBitmapString(20,420, (void*)font, batteryPercentString);
 
     //end changes
     glPopMatrix();
@@ -430,16 +446,48 @@ static void display(void){
 
 //Gets the stats and calls redisplay every second
 void update(int value){
-    batteryLevel = (rand() / (double)RAND_MAX) * 4;
-    sprintf(b, "batteryLevel : %f", batteryLevel );
-    batteryPercent = 100.0 * (batteryLevel / 4 );
-    sprintf(p, "batteryPercent : %d%%", (int)batteryPercent );
+    batteryLevel = (batteryLevel(cflieCopter));
+    sprintf(batteryLevelString, "batteryLevel : %f", batteryLevel );
+    batteryPercent = 100.0 * (batteryLevel / MAXBATTERYLEVEL );
+    sprintf(batteryPercentString, "batteryPercent : %d%%", (int)batteryPercent );
+
+    pressure = pressure(cflieCopter);
+    temperature = temperature(cflieCopter);
+    batteryState = batteryState(cflieCopter);
+    accX = accX(cflieCopter);
+    accY = accY(cflieCopter);
+    accZ = accZ(cflieCopter);
+    altitude = asl(cflieCopter);
+
+    sprintf(batteryStateString, "batteryState : %f", batteryState );
+    sprintf(temperatureString, "temperature : %f", temperature );
+    sprintf(pressureString, "pressure : %f", pressure );
+    sprintf(accelerationString, "acceleration X: %f Y: %f Z: %f", accX, accY, accZ);
+    sprintf(temperatureString, "altitude : %f", altitude );
+
     //1000 ms timer to call update
     glutTimerFunc(1000, update, 0);
     glutPostRedisplay();
 } 
 /*EXTENSION*/
 
+//Campbell's code for file opening
+void WriteMemoryToFileOrDie(char* filename, char* data, int len) {
+  int i, j;
+  FILE* fp = fopen(filename, "w");
+  if (!fp) {
+    perror("Open file failed \n");
+    exit(-1);
+  }
+  j = 0;
+  while ((i = fwrite((data + j), sizeof(char), (len - j), fp)) > 0)
+    j = j + i;
+  if (j != len) {
+    perror("Write file failed\n");
+    exit(-1);2
+  }
+  fclose(fp);
+}
 
 
 //This this the main function, use to set up the radio and init the copter
@@ -478,6 +526,15 @@ int main( int argc, char **argv ) {
     glutTimerFunc(25, update, 0);     
     glutMainLoop();
     /*EXTENSION*/
+
+    pressure(cflieCopter);
+    temperature(cflieCopter);
+    batteryState(cflieCopter);
+    accX(cflieCopter);
+    accY(cflieCopter);
+    accZ(cflieCopter);
+    float asl(cflieCopter);
+    double batteryLevel(cflieCopter)
 
     // Loop until we exit
     while ( 1 ) {}
