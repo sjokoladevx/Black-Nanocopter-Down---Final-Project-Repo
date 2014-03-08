@@ -54,7 +54,7 @@ CCrazyRadio.h
 CCRTPPacket.h
 ../include/cflie/CCRTPPacket.h
 
-/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/control/control.cpp
+/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/control/control2.cpp
 cflie/CCrazyflie.h
 -
 stdio.h
@@ -72,8 +72,6 @@ sys/un.h
 netinet/in.h
 -
 pthread.h
--
-GLUT/glut.h
 -
 
 /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_c.h

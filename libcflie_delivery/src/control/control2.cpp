@@ -55,18 +55,18 @@ using namespace std;
 #define TRIM_PITCH 0
 
 // OTHER IMPORTANT CONSTANTS 
-#define ABS_PITCH_VALUE 8.5 // constant (absolute value) for pitch value if pitch is activated
-#define ABS_ROLL_VALUE 8.5 // constant (absolute value) for roll value if roll is activated
+#define ABS_PITCH_VALUE 8 // constant (absolute value) for pitch value if pitch is activated
+#define ABS_ROLL_VALUE 8 // constant (absolute value) for roll value if roll is activated
 #define POS_PITCH_THRESHOLD .45 // threshold for leap direction to set positive pitch
 #define NEG_PITCH_THRESHOLD -.45 // threshold for leap direction to set negative pitch
 #define POS_ROLL_THRESHOLD .45 // threshold for leap direction sensor to set positive roll
 #define NEG_ROLL_THRESHOLD -.45 // threshold for leap direction sensor to set negative roll
-#define HOVER_SWIPE_THRESHOLD 600 // threshold for the velocity sensor to interpret hover swipe gesture
+#define HOVER_SWIPE_THRESHOLD 1200 // threshold for the velocity sensor to interpret hover swipe gesture
 #define THRUST_CONSTANT 35700 // constant for base thrust level
 #define FINGER_COUNT_THRESHOLD 2 // if we have less than this amount of fingers detected, we will land
 #define HOVER_THRUST_CONST 32767 // hover thrust constant (preprogrammed in Crazyflie)
 #define LANDING_REDUCTION_CONSTANT 80 // when we are landing, this constant is reduced from thrust every cycle
-#define THRUST_MULTIPLIER 50.0 // constant used to calculate thrust
+#define THRUST_MULTIPLIER 52.0 // constant used to calculate thrust
 #define BATT_MULTIPLIER_CONST 4.0 // constant used in conjunction with batteryLevel to calculate thrust
 #define TIME_GAP 550 // gap for break between state transitions
 #define INITIAL_THRUST 10001 // initial thrust level
@@ -76,7 +76,7 @@ CCrazyflie *cflieCopter = NULL;
 
 // KEY GLOBALS
 int current_signal = NO_SIG; // default signal is no signal
-int current_state = LAND_STATE; //default state is land state
+int current_state = FLY_STATE; //default state is land state
 float current_thrust; // holds the current thrust
 float current_roll;  // holds the current roll
 float current_pitch; // holds the current pitch
@@ -179,12 +179,14 @@ void on_frame(leap_controller_ref controller, void *user_info)
 
     // Send the change land signal if we need to 
      // Trigger for land is sensing less than 2 fingers
+     /*
      if ( ( leap_hand_fingers_count( hand ) < FINGER_COUNT_THRESHOLD && current_state == FLY_STATE ) || 
       ( leap_hand_fingers_count( hand ) >= FINGER_COUNT_THRESHOLD && current_state == LAND_STATE ) ) {
       current_signal = CHANGE_LAND_SIG;
     leap_frame_release( frame );
     return;
   }
+  */
 
 // Set the thrust value
   current_thrust = position.y;
@@ -266,9 +268,11 @@ void* main_control( void * param ) {
       case CHANGE_LAND_SIG:
       if ( current_state == LAND_STATE ) {
         current_state = FLY_STATE;
+        printf( "Taking off!" );
       }
       else if ( current_state == FLY_STATE ) {
         current_state = LAND_STATE;
+        printf( "Landing!" );
       }
       break;
 
