@@ -44,8 +44,13 @@ int w, h;
 
 char batteryLevelString[30]; 
 char batteryPercentString[30];  
-char accelerationString[90]; 
-char gyroscopeString[90]; 
+char accelerationStringX[30]; 
+char accelerationStringY[30]; 
+char accelerationStringZ[30]; 
+char gyroscopeStringX[30]; 
+char gyroscopeStringY[30]; 
+char gyroscopeStringZ[30];
+
 double cflieBatteryLevel;
 double batteryPercent;
 float cflieGyroX;
@@ -138,10 +143,15 @@ void update(){
     cflieAccX = accX(cflieCopter);
     cflieAccY = accY(cflieCopter);
     cflieAccZ = accZ(cflieCopter);
-    sprintf(accelerationString, "acceleration X: %f Y: %f Z: %f", cflieAccX, cflieAccY, cflieAccZ );
-    sprintf(gyroscopeString, "gyroscope X: %f Y: %f Z: %f", cflieGyroX, cflieGyroY, cflieGyroZ );
+    sprintf(accelerationStringX, "acceleration X: %f f", cflieAccX);
+    sprintf(gyroscopeStringX, "gyroscope X: %f ", cflieGyroX);
+    sprintf(accelerationStringY, "acceleration Y: %f ", cflieAccY);
+    sprintf(gyroscopeStringY, "gyroscope Y: %f ", cflieGyroY);
+    sprintf(accelerationStringZ, "acceleration Z: %f", cflieAccZ );
+    sprintf(gyroscopeStringZ, "gyroscope Z: %f", cflieGyroZ );
 
-    sprintf(finalString, "%s\n%s\n%s\n%s\n%f", batteryLevelString, batteryPercentString, accelerationString, gyroscopeString, batteryPercent );
+
+    sprintf(finalString, "%s\n%s\n%s\n%s\n%f", batteryLevelString, batteryPercentString, accelerationStringX, accelerationStringY, accelerationStringZ, gyroscopeStringX, gyroscopeStringY, gyroscopeStringZ, batteryPercent );
     char outputFile[] = "output.txt";
     writeToFile(outputFile, finalString);
 } 

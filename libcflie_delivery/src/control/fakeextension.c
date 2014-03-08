@@ -6,12 +6,11 @@
 int w, h;
 const int font=(int)GLUT_BITMAP_9_BY_15;
 
-char accelerationStringX[30]; 
-char accelerationStringY[30]; 
-char accelerationStringZ[30]; 
-char gyroscopeStringX[30]; 
-char gyroscopeStringY[30]; 
-char gyroscopeStringZ[30];
+char batteryStateString[30]; 
+char temperatureString[30]; 
+char pressureString[30]; 
+char accelerationString[90]; 
+char altitudeString[30];
 
 char batteryLevelString[30]; 
 char batteryPercentString[30]; 
@@ -60,13 +59,11 @@ static void display(void){
     glPushMatrix();
     glLoadIdentity();
     renderBitmapString(20,20,(void *)font,"Copter Battery Life");
-    renderBitmapString(300,100,(void *)font,accelerationStringX);
-    renderBitmapString(300,200,(void *)font,accelerationStringY);
-    renderBitmapString(300,150,(void *)font,accelerationStringZ);
-    renderBitmapString(300,250,(void *)font,gyroscopeStringX);
-    renderBitmapString(300,300,(void *)font,gyroscopeStringY);
-    renderBitmapString(300,350,(void *)font,gyroscopeStringZ);
-
+    renderBitmapString(300,100,(void *)font,temperatureString);
+    renderBitmapString(300,200,(void *)font,pressureString);
+    renderBitmapString(300,150,(void *)font,accelerationString);
+    renderBitmapString(300,250,(void *)font,altitudeString);
+    renderBitmapString(300,300,(void *)font,batteryStateString);
 
     int i = 60;
     renderBitmapString(20,i-20,(void *)font,"        _____");
@@ -133,40 +130,32 @@ printf("opening\n");
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
 
-   sprintf(accelerationStringX,line); }
-         printf("%s\n",accelerationStringX);
+   sprintf(batteryStateString,line); }
+         printf("%s\n",batteryStateString);
 
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
 
-   sprintf(accelerationStringY,line); }
-         printf("%s\n",accelerationStringY);
+   sprintf(temperatureString,line); }
+         printf("%s\n",temperatureString);
 
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
 
-   sprintf(accelerationStringZ,line); }
-         printf("%s\n",accelerationStringZ);
+   sprintf(pressureString,line); }
+         printf("%s\n",pressureString);
 
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
 
-   sprintf(gyroscopeStringX,line); }
-         printf("%s\n",gyroscopeStringX);
+   sprintf(accelerationString,line); }
+         printf("%s\n",accelerationString);
 
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
 
-   sprintf(gyroscopeStringY,line); }
-         printf("%s\n",gyroscopeStringY);
-
-
-   if((read = getline(&line, &len, fp)) != -1){
-       line[strlen(line)-1] = "";
-
-   sprintf(gyroscopeStringZ,line); }
-         printf("%s\n",gyroscopeStringZ);
-
+   sprintf(altitudeString,line); }
+         printf("%s\n",altitudeString);
 
 
    if (((read = getline(&line, &len, fp)) != -1)){
