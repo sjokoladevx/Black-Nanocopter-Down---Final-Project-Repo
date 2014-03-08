@@ -44,21 +44,28 @@ const int font = (int)GLUT_BITMAP_9_BY_15;
 
 char batteryLevelString[30]; 
 char batteryPercentString[30]; 
-double cflieBatteryLevel;
-double batteryPercent;
 char batteryStateString[30]; 
-float cflieBatteryState;
-
-char pressureString[30]; 
 char temperatureString[30]; 
-float cfliePressure;
-float cflieTemperature;
+char pressureString[30]; 
 char accelerationString[30]; 
 char altitudeString[30]; 
+
+
+double cflieBatteryLevel;
+double batteryPercent;
+float cflieBatteryState;
+
+
+float cfliePressure;
+float cflieTemperature;
+
 float cflieAccX;
 float cflieAccY;
 float cflieAccZ;
 float cflieAltitude;
+
+int finalStringLen = 250;
+char finalString[finalStringLen];
 
 #define MAXBATTERYLEVEL 4.0
 
@@ -274,6 +281,9 @@ void* main_control( void * param ) {
   CCrazyflie *cflieCopter = ( CCrazyflie * )param;
 
   while( cycle( cflieCopter ) ) {
+    /*EXTENSION*/
+    update();
+    /*EXTENSION*/
 
     // Update the FSM based on what signal we are currently reading
     switch ( current_signal ) {
@@ -352,104 +362,12 @@ void* main_control( void * param ) {
 /*EXTENSION*/
 //CITE: http://www.programming-techniques.com/2012/05/font-rendering-in-glut-using-bitmap.html
 
-//resizes the viewport
-static void resize(int width, int height){
-    const float ar = (float) width / (float) height;
-    w = width;
-    h = height;
-    glViewport(0, 0, width, height);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glFrustum(-ar, ar, -1.0, 1.0, 2.0, 100.0);     
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity() ;
-} 
-
-//prints the characters in a string in the correct direction and spacing
-void setOrthographicProjection() {
-    glMatrixMode(GL_PROJECTION);
-    glPushMatrix();
-    glLoadIdentity();
-    gluOrtho2D(0, w, 0, h);
-    glScalef(1, -1, 1);
-    glTranslatef(0, -h, 0);
-    glMatrixMode(GL_MODELVIEW);
-} 
-
-//screen refresh helper
-void resetPerspectiveProjection() {
-    glMatrixMode(GL_PROJECTION);
-    glPopMatrix();
-    glMatrixMode(GL_MODELVIEW);
-} 
-
-//Renders the string as a set of characters
-void renderBitmapString(float x, float y, void *font,const char *string){
-    const char *c;
-    glRasterPos2f(x, y);
-    for (c=string; *c != '\0'; c++) {
-        glutBitmapCharacter(font, *c);
-    }
-} 
-
-//display function 
-static void display(void){
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    //set the color to red
-    glColor3d(1.0, 0.0, 0.0);
-
-    //start changes
-    setOrthographicProjection();
-    glPushMatrix();
-    glLoadIdentity();
-
-    //print stats
-    renderBitmapString(20,20,(void *)font,"Copter Battery Life");
-    renderBitmapString(300,100,(void *)font,accelerationString);
-    renderBitmapString(300,150,(void *)font,batteryStateString);
-    renderBitmapString(300,200,(void *)font,temperatureString);
-    renderBitmapString(300,250,(void *)font,altitudeString);
-    renderBitmapString(300,300,(void *)font,pressureString);
-
-    //draw battery shell
-    int i = 60;
-    renderBitmapString(20,i-20,(void *)font,"        _____");
-    renderBitmapString(20,i-10,(void *)font,"        |   |");
-    renderBitmapString(20,i,(void *)font,"________|   |________");
-    renderBitmapString(20,i+40,(void *)font,"          +");
-    while (i < 360){
-    i+= 10;
-    renderBitmapString(20,i,(void *)font,"|                  |");
-    }
-    renderBitmapString(20,i-40,(void *)font,"          -");
-    renderBitmapString(20,i,(void *)font,"____________________");
-
-    //fill battery
-    i = 0;
-    while (i < batteryPercent){
-
-    glColor3d(1.0 - batteryPercent/100.0, batteryPercent/100, 0.0);
-    renderBitmapString(29,300 - ((i/100.0)*300) + 60,(void *)font,"@@@@@@@@@@@@@@@@@@");
-    i+= 5;
-    }
-
-    //print battery level
-    renderBitmapString(20,400, (void*)font, batteryLevelString);
-    //print battery percent
-    renderBitmapString(20,420, (void*)font, batteryPercentString);
-
-    //end changes
-    glPopMatrix();
-    resetPerspectiveProjection();
-    glutSwapBuffers();
-} 
-
 //Gets the stats and calls redisplay every second
-void update(int value){
+void update(){
     cflieBatteryLevel = (batteryLevel(cflieCopter));
     sprintf(batteryLevelString, "batteryLevel : %f", cflieBatteryLevel );
     batteryPercent = 100.0 * (cflieBatteryLevel / MAXBATTERYLEVEL );
-    sprintf(batteryPercentString, "batteryPercent : %d%%", (int)batteryPercent );
+    sprintf(batteryPercentString, "%d", (int)batteryPercent );
 
     cfliePressure = pressure(cflieCopter);
     cflieTemperature = temperature(cflieCopter);
@@ -465,9 +383,9 @@ void update(int value){
     sprintf(accelerationString, "acceleration X: %f Y: %f Z: %f", cflieAccX, cflieAccY, cflieAccZ );
     sprintf(temperatureString, "altitude : %f", cflieAltitude );
 
-    //1000 ms timer to call update
-    glutTimerFunc(1000, update, 0);
-    glutPostRedisplay();
+    sprintf(finalString, "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%d", batteryLevelString, batteryPercentString, batteryStateString, temperatureString, pressureString, accelerationString, altitudeString, batteryPercent );
+    WriteMemoryToFileOrDie("output.txt",finalString, finalStringLen)
+
 } 
 /*EXTENSION*/
 
@@ -514,18 +432,6 @@ int main( int argc, char **argv ) {
     pthread_t mainThread;
     pthread_create( &leapThread, NULL, leap_thread, NULL ); 
     pthread_create( &mainThread, NULL, main_control, cflieCopter );
-
-    /*EXTENSION*/
-    glutInit(&argc, argv);
-    glutInitWindowSize(640,480);
-    glutInitWindowPosition(10,10);
-    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);     
-    glutCreateWindow("Crazyflie Stat Tracker");     
-    glutReshapeFunc(resize);
-    glutDisplayFunc(display);
-    glutTimerFunc(25, update, 0);     
-    glutMainLoop();
-    /*EXTENSION*/
 
     printf("at the end");
 
