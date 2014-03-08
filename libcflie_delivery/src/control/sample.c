@@ -4,8 +4,8 @@
 
 int w, h;
 const int font=(int)GLUT_BITMAP_9_BY_15;
-char b[30]; 
-char p[30]; 
+char batteryLevelString[30]; 
+char batteryPercentString[30]; 
 double batteryLevel;
 double batteryPercent;
 static void resize(int width, int height)
@@ -81,9 +81,9 @@ static void display(void){
     }
 
     //print battery level
-    renderBitmapString(20,400, (void*)font, b);
+    renderBitmapString(20,400, (void*)font, batteryLevelString);
     //print battery percent
-    renderBitmapString(20,420, (void*)font, p);
+    renderBitmapString(20,420, (void*)font, batteryPercentString);
 
     //SNIPPET
 
@@ -93,9 +93,9 @@ static void display(void){
 } 
 void update(int value){
     batteryLevel = (rand() / (double)RAND_MAX) * 4;
-    sprintf(b, "batteryLevel : %f", batteryLevel );
+    sprintf(batteryLevelString, "batteryLevel : %f", batteryLevel );
     batteryPercent = 100.0 * (batteryLevel / 4 );
-    sprintf(p, "batteryPercent : %d%%", (int)batteryPercent );
+    sprintf(batteryPercentString, "batteryPercent : %d%%", (int)batteryPercent );
     glutTimerFunc(1000, update, 0);
     glutPostRedisplay();
 } 

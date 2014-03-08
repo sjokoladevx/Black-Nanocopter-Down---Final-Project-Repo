@@ -5,14 +5,17 @@
 
 int w, h;
 const int font=(int)GLUT_BITMAP_9_BY_15;
-char* batteryLevelString; 
-char* batteryPercentString; 
-char* batteryStateString; 
-char* temperatureString; 
-char* pressureString; 
-char* accelerationString; 
-char* altitudeString; 
-int batteryPercent;
+
+char batteryStateString[30]; 
+char temperatureString[30]; 
+char pressureString[30]; 
+char accelerationString[90]; 
+char altitudeString[30];
+
+char batteryLevelString[30]; 
+char batteryPercentString[30]; 
+double batteryLevel;
+double batteryPercent;
 
 static void resize(int width, int height)
 
@@ -98,46 +101,89 @@ static void display(void){
 } 
 void update(int value){
 
+printf("updating\n");
+
  FILE * fp;
  char * line = NULL;
  size_t len = 0;
  ssize_t read;
 
- fp = fopen("output", "r");
- if (fp == NULL)
-     printf("read failed");
+printf("opening\n");
+
+ fp = fopen("output.txt", "r");
+ if (fp == NULL){
+     printf("read failed\n");
      return;
+    }
+
+  printf("opened\n");
+
+   if((read = getline(&line, &len, fp)) != -1){
+   line[strlen(line)-1] = "";
+   sprintf(batteryLevelString, "%s", line );}
+   printf("%s\n",batteryLevelString);
+   if((read = getline(&line, &len, fp)) != -1){
+       line[strlen(line)-1] = "";
+   sprintf(batteryPercentString,line); }
+      printf("%s\n",batteryPercentString);
+
+   if((read = getline(&line, &len, fp)) != -1){
+       line[strlen(line)-1] = "";
+
+   sprintf(batteryStateString,line); }
+         printf("%s\n",batteryStateString);
+
+   if((read = getline(&line, &len, fp)) != -1){
+       line[strlen(line)-1] = "";
+
+   sprintf(temperatureString,line); }
+         printf("%s\n",temperatureString);
+
+   if((read = getline(&line, &len, fp)) != -1){
+       line[strlen(line)-1] = "";
+
+   sprintf(pressureString,line); }
+         printf("%s\n",pressureString);
+
+   if((read = getline(&line, &len, fp)) != -1){
+       line[strlen(line)-1] = "";
+
+   sprintf(accelerationString,line); }
+         printf("%s\n",accelerationString);
+
+   if((read = getline(&line, &len, fp)) != -1){
+       line[strlen(line)-1] = "";
+
+   sprintf(altitudeString,line); }
+         printf("%s\n",altitudeString);
 
 
- if((read = getline(&line, &len, fp)) != -1){
-   batteryLevelString = line; }
-   if((read = getline(&line, &len, fp)) != -1){
-   batteryPercentString = line; }
-   if((read = getline(&line, &len, fp)) != -1){
-   batteryStateString = line; }
-   if((read = getline(&line, &len, fp)) != -1){
-   temperatureString = line; }
-   if((read = getline(&line, &len, fp)) != -1){
-   pressureString = line; }
-   if((read = getline(&line, &len, fp)) != -1){
-   pressureString = line; }
-   if((read = getline(&line, &len, fp)) != -1){
-   accelerationString = line; }
-   if((read = getline(&line, &len, fp)) != -1){
-   altitudeString = line; }
-
-   if (batteryPercentString){
-   batteryPercent = atoi(batteryPercentString);
+   if (((read = getline(&line, &len, fp)) != -1)){
+   batteryPercent = atoi(line);
+            printf("%f\n",batteryPercent);
 }
 
    if (line){
      free(line);
- }
+   }
    fclose(fp);
+
+printf("timer\n");
+
 
  glutTimerFunc(1000, update, 0);
  glutPostRedisplay();
 } 
+
+// void update(int value){
+//     batteryLevel = (rand() / (double)RAND_MAX) * 4;
+//     sprintf(batteryLevelString, "batteryLevel : %f", batteryLevel );
+//     batteryPercent = 100.0 * (batteryLevel / 4 );
+//     sprintf(batteryPercentString, "batteryPercent : %d%%", (int)batteryPercent );
+//     glutTimerFunc(1000, update, 0);
+//     glutPostRedisplay();
+// } 
+
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
