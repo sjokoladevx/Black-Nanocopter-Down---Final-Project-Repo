@@ -268,14 +268,14 @@ void turnOffHoverMode( CCrazyflie* crFile ) {
 // Some of these are utilized in extension to grab different kinds of params from the copter sensors
 bool startLogging(CCrazyflie* crFile) {
   enableBatteryLogging(crFile);
-  enableAltimeterLogging(crFile);
+  enableGyroscopeLogging(crFile);
   enableAccelerometerLogging(crFile);
   return true;
 }
 
 bool stopLogging(CCrazyflie* crFile) {
   disableBatteryLogging(crFile);
-  disableAltimeterLogging(crFile);
+  disableGyroscopeLogging(crFile);
   disableAccelerometerLogging(crFile);
   return true;
 }
@@ -307,11 +307,11 @@ float batteryState(CCrazyflie* crFile) {
   return sensorDoubleValue(crFile, "pm.state");
 }
 
-void enableAltimeterLogging(CCrazyflie* crFile) {
-  registerLoggingBlock(crFile->m_tocLogs, "altimeter", 1000);
-  startLogging(crFile->m_tocLogs, "alti.pressure", "altimeter");
-  startLogging(crFile->m_tocLogs, "alti.temperature", "altimeter");
-  startLogging(crFile->m_tocLogs, "alti.asl", "altimeter");
+void enableGyroscopeLogging(CCrazyflie* crFile) {
+  registerLoggingBlock(crFile->m_tocLogs, "gyroscope", 1000);
+  startLogging(crFile->m_tocLogs, "gyro.x", "gyroscope");
+  startLogging(crFile->m_tocLogs, "gyro.y", "gyroscope");
+  startLogging(crFile->m_tocLogs, "gyro.z", "gyroscope");
 }
 
 float accX(CCrazyflie* crFile) {
@@ -326,8 +326,8 @@ float accZ(CCrazyflie* crFile) {
   return sensorDoubleValue(crFile, "acc.z");
 }
 
-float asl(CCrazyflie* crFile) {
-  return sensorDoubleValue(crFile, "alti.asl");
+float gyroX(CCrazyflie* crFile) {
+  return sensorDoubleValue(crFile, "gyro.x");
 }
 
 void enableAccelerometerLogging(CCrazyflie* crFile) {
@@ -341,16 +341,16 @@ void disableAccelerometerLogging(CCrazyflie* crFile) {
   unregisterLoggingBlock(crFile->m_tocLogs, "accelerometer");
 }
 
-float pressure(CCrazyflie* crFile) {
-  return sensorDoubleValue(crFile, "alti.pressure");
+float gyroY(CCrazyflie* crFile) {
+  return sensorDoubleValue(crFile, "gyro.y");
 }
 
-float temperature(CCrazyflie* crFile) {
-  return sensorDoubleValue(crFile, "alti.temperature");
+float gyroZ(CCrazyflie* crFile) {
+  return sensorDoubleValue(crFile, "gyro.z");
 }
 
-void disableAltimeterLogging(CCrazyflie* crFile) {
-  unregisterLoggingBlock(crFile->m_tocLogs, "altimeter");
+void disableGyroscopeLogging(CCrazyflie* crFile) {
+  unregisterLoggingBlock(crFile->m_tocLogs, "gyroscope");
 }
 
 double batteryLevel(CCrazyflie* crFile) {

@@ -144,19 +144,19 @@ typedef struct _CCrazyflie {
     CCrazyRadio radio instance given in the constructor). */
   void CCrazyflieDestructor(CCrazyflie* crFile);
 
-  void enableAltimeterLogging(CCrazyflie* crFile);
+  void enableGyroscopeLogging(CCrazyflie* crFile);
   void enableAccelerometerLogging(CCrazyflie* crFile);
   
 void turnOnHoverMode( CCrazyflie* crFile );
 void turnOffHoverMode( CCrazyflie* crFile );
-float pressure(CCrazyflie* crFile);
-float temperature(CCrazyflie* crFile);
-void disableAltimeterLogging(CCrazyflie* crFile);
+float gyroX(CCrazyflie* crFile);
+float gyroY(CCrazyflie* crFile);
+void disableGyroscopeLogging(CCrazyflie* crFile);
 float batteryState(CCrazyflie* crFile);
 float accX(CCrazyflie* crFile);
 float accY(CCrazyflie* crFile);
 float accZ(CCrazyflie* crFile);
-float asl(CCrazyflie* crFile);
+float gyroZ(CCrazyflie* crFile);
 void disableAccelerometerLogging(CCrazyflie* crFile);
 
 

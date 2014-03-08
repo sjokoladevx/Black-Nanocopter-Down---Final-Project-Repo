@@ -40,32 +40,23 @@
 #include <GLUT/glut.h>
 //NOTE: for windows switch this to GL/glut.h
 int w, h;
-const int font = (int)GLUT_BITMAP_9_BY_15;
+//const int font = (int)GLUT_BITMAP_9_BY_15;
 
 char batteryLevelString[30]; 
-char batteryPercentString[30]; 
-char batteryStateString[30]; 
-char temperatureString[30]; 
-char pressureString[30]; 
-char accelerationString[30]; 
-char altitudeString[30]; 
-
-
+char batteryPercentString[30];  
+char accelerationString[90]; 
+char gyroscopeString[90]; 
 double cflieBatteryLevel;
 double batteryPercent;
-float cflieBatteryState;
-
-
-float cfliePressure;
-float cflieTemperature;
-
+float cflieGyroX;
+float cflieGyroY;
+float cflieGyroZ;
 float cflieAccX;
 float cflieAccY;
 float cflieAccZ;
-float cflieAltitude;
 
-int finalStringLen = 250;
-char finalString[finalStringLen];
+int finalStringLen = 400;
+char finalString[400];
 
 #define MAXBATTERYLEVEL 4.0
 
@@ -119,6 +110,42 @@ float current_roll;  // holds the current roll
 float current_pitch; // holds the current pitch
 double dTimeNow;  // keeps track of time for state transitions
 double dTimePrevious = -1; // keeps track of time for state transitions
+
+// Writes string on battery stats to file
+void writeToFile(char* filename, char* data) {
+  FILE* fp = fopen(filename, "w");
+  if (!fp) {
+    printf("Write to open file failed \n");
+    exit(-1);
+  }
+  fprintf(fp, data);
+  fclose(fp);
+}
+
+/*EXTENSION*/
+//CITE: http://www.programming-techniques.com/2012/05/font-rendering-in-glut-using-bitmap.html
+
+//Gets the stats and calls redisplay every second
+void update(){
+    cflieBatteryLevel = (batteryLevel(cflieCopter));
+    sprintf(batteryLevelString, "batteryLevel : %f", cflieBatteryLevel );
+    batteryPercent = 100.0 * (cflieBatteryLevel / MAXBATTERYLEVEL );
+    sprintf(batteryPercentString, "%d", (int)batteryPercent );
+
+    cflieGyroX = gyroX(cflieCopter);
+    cflieGyroY = gyroY(cflieCopter);
+    cflieGyroZ = gyroZ(cflieCopter);
+    cflieAccX = accX(cflieCopter);
+    cflieAccY = accY(cflieCopter);
+    cflieAccZ = accZ(cflieCopter);
+    sprintf(accelerationString, "acceleration X: %f Y: %f Z: %f", cflieAccX, cflieAccY, cflieAccZ );
+    sprintf(gyroscopeString, "gyroscope X: %f Y: %f Z: %f", cflieGyroX, cflieGyroY, cflieGyroZ );
+
+    sprintf(finalString, "%s\n%s\n%s\n%s\n%f", batteryLevelString, batteryPercentString, accelerationString, gyroscopeString, batteryPercent );
+    char outputFile[] = "output.txt";
+    writeToFile(outputFile, finalString);
+} 
+/*EXTENSION*/
 
 // COPTER CONTROL HELPER FUNCTIONS
 
@@ -359,55 +386,6 @@ void* main_control( void * param ) {
   return 0;
 }
 
-/*EXTENSION*/
-//CITE: http://www.programming-techniques.com/2012/05/font-rendering-in-glut-using-bitmap.html
-
-//Gets the stats and calls redisplay every second
-void update(){
-    cflieBatteryLevel = (batteryLevel(cflieCopter));
-    sprintf(batteryLevelString, "batteryLevel : %f", cflieBatteryLevel );
-    batteryPercent = 100.0 * (cflieBatteryLevel / MAXBATTERYLEVEL );
-    sprintf(batteryPercentString, "%d", (int)batteryPercent );
-
-    cfliePressure = pressure(cflieCopter);
-    cflieTemperature = temperature(cflieCopter);
-    cflieBatteryState = batteryState(cflieCopter);
-    cflieAccX = accX(cflieCopter);
-    cflieAccY = accY(cflieCopter);
-    cflieAccZ = accZ(cflieCopter);
-    cflieAltitude = asl(cflieCopter);
-
-    sprintf(batteryStateString, "batteryState : %f", cflieBatteryState );
-    sprintf(temperatureString, "temperature : %f", cflieTemperature );
-    sprintf(pressureString, "pressure : %f", cfliePressure );
-    sprintf(accelerationString, "acceleration X: %f Y: %f Z: %f", cflieAccX, cflieAccY, cflieAccZ );
-    sprintf(temperatureString, "altitude : %f", cflieAltitude );
-
-    sprintf(finalString, "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%d", batteryLevelString, batteryPercentString, batteryStateString, temperatureString, pressureString, accelerationString, altitudeString, batteryPercent );
-    WriteMemoryToFileOrDie("output.txt",finalString, finalStringLen)
-
-} 
-/*EXTENSION*/
-
-//Campbell's code for file opening
-void WriteMemoryToFileOrDie(char* filename, char* data, int len) {
-  int i, j;
-  FILE* fp = fopen(filename, "w");
-  if (!fp) {
-    perror("Open file failed \n");
-    exit(-1);
-  }
-  j = 0;
-  while ((i = fwrite((data + j), sizeof(char), (len - j), fp)) > 0)
-    j = j + i;
-  if (j != len) {
-    perror("Write file failed\n");
-    exit(-1);
-  }
-  fclose(fp);
-}
-
-
 //This this the main function, use to set up the radio and init the copter
 int main( int argc, char **argv ) {
   CCrazyRadio *crRadio = new CCrazyRadio;
@@ -432,8 +410,6 @@ int main( int argc, char **argv ) {
     pthread_t mainThread;
     pthread_create( &leapThread, NULL, leap_thread, NULL ); 
     pthread_create( &mainThread, NULL, main_control, cflieCopter );
-
-    printf("at the end");
 
     // Loop until we exit
     while ( 1 ) {}
