@@ -527,14 +527,7 @@ int main( int argc, char **argv ) {
     glutMainLoop();
     /*EXTENSION*/
 
-    pressure(cflieCopter);
-    temperature(cflieCopter);
-    batteryState(cflieCopter);
-    accX(cflieCopter);
-    accY(cflieCopter);
-    accZ(cflieCopter);
-    float asl(cflieCopter);
-    double batteryLevel(cflieCopter)
+    printf("at the end");
 
     // Loop until we exit
     while ( 1 ) {}
