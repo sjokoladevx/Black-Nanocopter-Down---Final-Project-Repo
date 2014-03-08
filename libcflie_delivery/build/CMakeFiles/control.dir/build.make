@@ -52,37 +52,37 @@ include CMakeFiles/control.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/control.dir/flags.make
 
-CMakeFiles/control.dir/src/control/control2.cpp.o: CMakeFiles/control.dir/flags.make
-CMakeFiles/control.dir/src/control/control2.cpp.o: ../src/control/control2.cpp
+CMakeFiles/control.dir/src/control/control.cpp.o: CMakeFiles/control.dir/flags.make
+CMakeFiles/control.dir/src/control/control.cpp.o: ../src/control/control.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles" $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/control.dir/src/control/control2.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/control.dir/src/control/control2.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/control/control2.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/control.dir/src/control/control.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/control.dir/src/control/control.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/control/control.cpp"
 
-CMakeFiles/control.dir/src/control/control2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/control.dir/src/control/control2.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/control/control2.cpp" > CMakeFiles/control.dir/src/control/control2.cpp.i
+CMakeFiles/control.dir/src/control/control.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/control.dir/src/control/control.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/control/control.cpp" > CMakeFiles/control.dir/src/control/control.cpp.i
 
-CMakeFiles/control.dir/src/control/control2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/control.dir/src/control/control2.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/control/control2.cpp" -o CMakeFiles/control.dir/src/control/control2.cpp.s
+CMakeFiles/control.dir/src/control/control.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/control.dir/src/control/control.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/control/control.cpp" -o CMakeFiles/control.dir/src/control/control.cpp.s
 
-CMakeFiles/control.dir/src/control/control2.cpp.o.requires:
-.PHONY : CMakeFiles/control.dir/src/control/control2.cpp.o.requires
+CMakeFiles/control.dir/src/control/control.cpp.o.requires:
+.PHONY : CMakeFiles/control.dir/src/control/control.cpp.o.requires
 
-CMakeFiles/control.dir/src/control/control2.cpp.o.provides: CMakeFiles/control.dir/src/control/control2.cpp.o.requires
-	$(MAKE) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/src/control/control2.cpp.o.provides.build
-.PHONY : CMakeFiles/control.dir/src/control/control2.cpp.o.provides
+CMakeFiles/control.dir/src/control/control.cpp.o.provides: CMakeFiles/control.dir/src/control/control.cpp.o.requires
+	$(MAKE) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/src/control/control.cpp.o.provides.build
+.PHONY : CMakeFiles/control.dir/src/control/control.cpp.o.provides
 
-CMakeFiles/control.dir/src/control/control2.cpp.o.provides.build: CMakeFiles/control.dir/src/control/control2.cpp.o
+CMakeFiles/control.dir/src/control/control.cpp.o.provides.build: CMakeFiles/control.dir/src/control/control.cpp.o
 
 # Object files for target control
 control_OBJECTS = \
-"CMakeFiles/control.dir/src/control/control2.cpp.o"
+"CMakeFiles/control.dir/src/control/control.cpp.o"
 
 # External object files for target control
 control_EXTERNAL_OBJECTS =
 
-../bin/control: CMakeFiles/control.dir/src/control/control2.cpp.o
+../bin/control: CMakeFiles/control.dir/src/control/control.cpp.o
 ../bin/control: CMakeFiles/control.dir/build.make
 ../bin/control: ../lib/libcflie.a
 ../bin/control: /usr/local/lib/libLeap.dylib
@@ -95,7 +95,7 @@ control_EXTERNAL_OBJECTS =
 CMakeFiles/control.dir/build: ../bin/control
 .PHONY : CMakeFiles/control.dir/build
 
-CMakeFiles/control.dir/requires: CMakeFiles/control.dir/src/control/control2.cpp.o.requires
+CMakeFiles/control.dir/requires: CMakeFiles/control.dir/src/control/control.cpp.o.requires
 .PHONY : CMakeFiles/control.dir/requires
 
 CMakeFiles/control.dir/clean:

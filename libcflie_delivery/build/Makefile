@@ -264,29 +264,29 @@ src/cflie/CTOC.cpp.s:
 	$(MAKE) -f CMakeFiles/cflie.dir/build.make CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.s
 .PHONY : src/cflie/CTOC.cpp.s
 
-src/control/control2.o: src/control/control2.cpp.o
-.PHONY : src/control/control2.o
+src/control/control.o: src/control/control.cpp.o
+.PHONY : src/control/control.o
 
 # target to build an object file
-src/control/control2.cpp.o:
-	$(MAKE) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/src/control/control2.cpp.o
-.PHONY : src/control/control2.cpp.o
+src/control/control.cpp.o:
+	$(MAKE) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/src/control/control.cpp.o
+.PHONY : src/control/control.cpp.o
 
-src/control/control2.i: src/control/control2.cpp.i
-.PHONY : src/control/control2.i
+src/control/control.i: src/control/control.cpp.i
+.PHONY : src/control/control.i
 
 # target to preprocess a source file
-src/control/control2.cpp.i:
-	$(MAKE) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/src/control/control2.cpp.i
-.PHONY : src/control/control2.cpp.i
+src/control/control.cpp.i:
+	$(MAKE) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/src/control/control.cpp.i
+.PHONY : src/control/control.cpp.i
 
-src/control/control2.s: src/control/control2.cpp.s
-.PHONY : src/control/control2.s
+src/control/control.s: src/control/control.cpp.s
+.PHONY : src/control/control.s
 
 # target to generate assembly for a file
-src/control/control2.cpp.s:
-	$(MAKE) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/src/control/control2.cpp.s
-.PHONY : src/control/control2.cpp.s
+src/control/control.cpp.s:
+	$(MAKE) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/src/control/control.cpp.s
+.PHONY : src/control/control.cpp.s
 
 src/leap/leap_controller.o: src/leap/leap_controller.cpp.o
 .PHONY : src/leap/leap_controller.o
@@ -458,9 +458,9 @@ help:
 	@echo "... src/cflie/CTOC.o"
 	@echo "... src/cflie/CTOC.i"
 	@echo "... src/cflie/CTOC.s"
-	@echo "... src/control/control2.o"
-	@echo "... src/control/control2.i"
-	@echo "... src/control/control2.s"
+	@echo "... src/control/control.o"
+	@echo "... src/control/control.i"
+	@echo "... src/control/control.s"
 	@echo "... src/leap/leap_controller.o"
 	@echo "... src/leap/leap_controller.i"
 	@echo "... src/leap/leap_controller.s"
