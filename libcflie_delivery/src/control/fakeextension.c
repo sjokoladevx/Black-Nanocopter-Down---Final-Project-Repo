@@ -110,7 +110,7 @@ printf("updating\n");
 
 printf("opening\n");
 
- fp = fopen("output.txt", "r");
+ fp = fopen("../../bin/output.txt", "r");
  if (fp == NULL){
      printf("read failed\n");
      return;

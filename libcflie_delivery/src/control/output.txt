@@ -1,0 +1,9 @@
+batteryLevel : 1.834601
+batteryPercent : 45%
+acceleration X: 0.000000
+acceleration Y: 0.000000 
+acceleration Z: 0.000000
+gyroscope X: 0.000000 
+gyroscope Y: 0.000000 
+gyroscope Z: 0.000000
+45.865013

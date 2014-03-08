@@ -15,23 +15,24 @@ double batteryLevel;
 double batteryPercent;
 
 char batteryLevelString[30]; 
-char batteryPercentString[30]; 
-char batteryStateString[30]; 
-char temperatureString[30]; 
-char pressureString[30]; 
-char accelerationString[90]; 
-char altitudeString[30];
+char batteryPercentString[30];  
+char accelerationStringX[30]; 
+char accelerationStringY[30]; 
+char accelerationStringZ[30]; 
+char gyroscopeStringX[30]; 
+char gyroscopeStringY[30]; 
+char gyroscopeStringZ[30];
 char finalString[400];
 
 int writeToFile(){
+ sprintf(accelerationStringX, "acceleration X: %f", 0);
+    sprintf(gyroscopeStringX, "gyroscope X: %f ", 0);
+    sprintf(accelerationStringY, "acceleration Y: %f ", 0);
+    sprintf(gyroscopeStringY, "gyroscope Y: %f ", 0);
+    sprintf(accelerationStringZ, "acceleration Z: %f", 0 );
+    sprintf(gyroscopeStringZ, "gyroscope Z: %f", 0 );
 
-sprintf(batteryStateString, "batteryState : %f", 0.0 );
-sprintf(temperatureString, "temperature : %f", 0.0 );
-sprintf(pressureString, "pressure : %f", 0.0 );
-sprintf(accelerationString, "acceleration X: %f Y: %f Z: %f", 1.0, 1.0, 1.0 );
-sprintf(altitudeString, "altitude : %f", 0.0 );
-
-sprintf(finalString, "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%f", batteryLevelString, batteryPercentString, batteryStateString, temperatureString, pressureString, accelerationString, altitudeString, batteryPercent );
+sprintf(finalString, "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%f", batteryLevelString, batteryPercentString, accelerationStringX, accelerationStringY, accelerationStringZ, gyroscopeStringX, gyroscopeStringY, gyroscopeStringZ, batteryPercent );
 
 FILE *f = fopen("output.txt", "w");
 if (f == NULL)

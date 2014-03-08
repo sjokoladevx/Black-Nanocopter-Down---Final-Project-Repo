@@ -124,48 +124,43 @@ printf("opening\n");
    if((read = getline(&line, &len, fp)) != -1){
    line[strlen(line)-1] = "";
    sprintf(batteryLevelString, "%s", line );}
-   printf("%s\n",batteryLevelString);
+   printf("battl%s\n",batteryLevelString);
+
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
    sprintf(batteryPercentString,line); }
-      printf("%s\n",batteryPercentString);
+      printf("battp %s\n",batteryPercentString);
 
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
-
    sprintf(accelerationStringX,line); }
-         printf("%s\n",accelerationStringX);
+         printf("accx %s\n",accelerationStringX);
 
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
-
    sprintf(accelerationStringY,line); }
-         printf("%s\n",accelerationStringY);
+         printf("accy %s\n",accelerationStringY);
 
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
-
    sprintf(accelerationStringZ,line); }
-         printf("%s\n",accelerationStringZ);
+         printf("accz %s\n",accelerationStringZ);
 
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
-
    sprintf(gyroscopeStringX,line); }
-         printf("%s\n",gyroscopeStringX);
+         printf("gyrox %s\n",gyroscopeStringX);
 
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
-
    sprintf(gyroscopeStringY,line); }
-         printf("%s\n",gyroscopeStringY);
+         printf("gyroy %s\n",gyroscopeStringY);
 
 
    if((read = getline(&line, &len, fp)) != -1){
        line[strlen(line)-1] = "";
-
    sprintf(gyroscopeStringZ,line); }
-         printf("%s\n",gyroscopeStringZ);
+         printf("gyroz %s\n",gyroscopeStringZ);
 
 
 

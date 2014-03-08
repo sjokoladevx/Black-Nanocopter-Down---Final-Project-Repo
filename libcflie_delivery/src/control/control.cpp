@@ -151,7 +151,7 @@ void update(){
     sprintf(gyroscopeStringZ, "gyroscope Z: %f", cflieGyroZ );
 
 
-    sprintf(finalString, "%s\n%s\n%s\n%s\n%f", batteryLevelString, batteryPercentString, accelerationStringX, accelerationStringY, accelerationStringZ, gyroscopeStringX, gyroscopeStringY, gyroscopeStringZ, batteryPercent );
+    sprintf(finalString, "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%f", batteryLevelString, batteryPercentString, accelerationStringX, accelerationStringY, accelerationStringZ, gyroscopeStringX, gyroscopeStringY, gyroscopeStringZ, batteryPercent );
     char outputFile[] = "output.txt";
     writeToFile(outputFile, finalString);
 } 
