@@ -38,10 +38,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/local/Cellar/cmake/2.8.12.2/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery
+CMAKE_SOURCE_DIR = "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build
+CMAKE_BINARY_DIR = "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cflie.dir/depend.make
@@ -54,17 +54,17 @@ include CMakeFiles/cflie.dir/flags.make
 
 CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.o: CMakeFiles/cflie.dir/flags.make
 CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.o: ../src/cflie/CCrazyRadio.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles" $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.o -c /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CCrazyRadio.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CCrazyRadio.cpp"
 
 CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CCrazyRadio.cpp > CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CCrazyRadio.cpp" > CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.i
 
 CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CCrazyRadio.cpp -o CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CCrazyRadio.cpp" -o CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.s
 
 CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.o.requires:
 .PHONY : CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.o.requires
@@ -77,17 +77,17 @@ CMakeFiles/cflie.dir/src/cflie/CCrazyRadio.cpp.o.provides.build: CMakeFiles/cfli
 
 CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.o: CMakeFiles/cflie.dir/flags.make
 CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.o: ../src/cflie/CCrazyflie.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles" $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.o -c /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CCrazyflie.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CCrazyflie.cpp"
 
 CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CCrazyflie.cpp > CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CCrazyflie.cpp" > CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.i
 
 CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CCrazyflie.cpp -o CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CCrazyflie.cpp" -o CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.s
 
 CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.o.requires:
 .PHONY : CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.o.requires
@@ -100,17 +100,17 @@ CMakeFiles/cflie.dir/src/cflie/CCrazyflie.cpp.o.provides.build: CMakeFiles/cflie
 
 CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.o: CMakeFiles/cflie.dir/flags.make
 CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.o: ../src/cflie/CCRTPPacket.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles" $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.o -c /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CCRTPPacket.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CCRTPPacket.cpp"
 
 CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CCRTPPacket.cpp > CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CCRTPPacket.cpp" > CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.i
 
 CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CCRTPPacket.cpp -o CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CCRTPPacket.cpp" -o CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.s
 
 CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.o.requires:
 .PHONY : CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.o.requires
@@ -123,17 +123,17 @@ CMakeFiles/cflie.dir/src/cflie/CCRTPPacket.cpp.o.provides.build: CMakeFiles/cfli
 
 CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.o: CMakeFiles/cflie.dir/flags.make
 CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.o: ../src/cflie/CTOC.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles" $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.o -c /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CTOC.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CTOC.cpp"
 
 CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CTOC.cpp > CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CTOC.cpp" > CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.i
 
 CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/cflie/CTOC.cpp -o CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/cflie/CTOC.cpp" -o CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.s
 
 CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.o.requires:
 .PHONY : CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.o.requires
@@ -146,17 +146,17 @@ CMakeFiles/cflie.dir/src/cflie/CTOC.cpp.o.provides.build: CMakeFiles/cflie.dir/s
 
 CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.o: CMakeFiles/cflie.dir/flags.make
 CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.o: ../src/leap/leap_controller.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles" $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.o -c /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_controller.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_controller.cpp"
 
 CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_controller.cpp > CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_controller.cpp" > CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.i
 
 CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_controller.cpp -o CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_controller.cpp" -o CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.s
 
 CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.o.requires:
 .PHONY : CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.o.requires
@@ -169,17 +169,17 @@ CMakeFiles/cflie.dir/src/leap/leap_controller.cpp.o.provides.build: CMakeFiles/c
 
 CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.o: CMakeFiles/cflie.dir/flags.make
 CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.o: ../src/leap/leap_frame.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles" $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.o -c /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_frame.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_frame.cpp"
 
 CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_frame.cpp > CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_frame.cpp" > CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.i
 
 CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_frame.cpp -o CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_frame.cpp" -o CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.s
 
 CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.o.requires:
 .PHONY : CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.o.requires
@@ -192,17 +192,17 @@ CMakeFiles/cflie.dir/src/leap/leap_frame.cpp.o.provides.build: CMakeFiles/cflie.
 
 CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.o: CMakeFiles/cflie.dir/flags.make
 CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.o: ../src/leap/leap_gesture.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles" $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.o -c /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_gesture.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_gesture.cpp"
 
 CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_gesture.cpp > CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_gesture.cpp" > CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.i
 
 CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_gesture.cpp -o CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_gesture.cpp" -o CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.s
 
 CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.o.requires:
 .PHONY : CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.o.requires
@@ -215,17 +215,17 @@ CMakeFiles/cflie.dir/src/leap/leap_gesture.cpp.o.provides.build: CMakeFiles/cfli
 
 CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.o: CMakeFiles/cflie.dir/flags.make
 CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.o: ../src/leap/leap_hand.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles" $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.o -c /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_hand.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_hand.cpp"
 
 CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_hand.cpp > CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_hand.cpp" > CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.i
 
 CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_hand.cpp -o CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_hand.cpp" -o CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.s
 
 CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.o.requires:
 .PHONY : CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.o.requires
@@ -238,17 +238,17 @@ CMakeFiles/cflie.dir/src/leap/leap_hand.cpp.o.provides.build: CMakeFiles/cflie.d
 
 CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.o: CMakeFiles/cflie.dir/flags.make
 CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.o: ../src/leap/leap_pointable.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles" $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.o -c /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_pointable.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_pointable.cpp"
 
 CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_pointable.cpp > CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_pointable.cpp" > CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.i
 
 CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_pointable.cpp -o CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_pointable.cpp" -o CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.s
 
 CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.o.requires:
 .PHONY : CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.o.requires
@@ -261,17 +261,17 @@ CMakeFiles/cflie.dir/src/leap/leap_pointable.cpp.o.provides.build: CMakeFiles/cf
 
 CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.o: CMakeFiles/cflie.dir/flags.make
 CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.o: ../src/leap/leap_utils.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles" $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.o -c /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_utils.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.o -c "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_utils.cpp"
 
 CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_utils.cpp > CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_utils.cpp" > CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.i
 
 CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/src/leap/leap_utils.cpp -o CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/src/leap/leap_utils.cpp" -o CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.s
 
 CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.o.requires:
 .PHONY : CMakeFiles/cflie.dir/src/leap/leap_utils.cpp.o.requires
@@ -335,6 +335,6 @@ CMakeFiles/cflie.dir/clean:
 .PHONY : CMakeFiles/cflie.dir/clean
 
 CMakeFiles/cflie.dir/depend:
-	cd /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build /Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/libcflie_delivery/build/CMakeFiles/cflie.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery" "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery" "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build" "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build" "/Users/stephen/Documents/CollegeSTuff/14W/CS50/project2/Black Nanocopter Down - Final Project Repo/libcflie_delivery/build/CMakeFiles/cflie.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/cflie.dir/depend
 

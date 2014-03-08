@@ -40,27 +40,27 @@
 #include <GLUT/glut.h>
 //NOTE: for windows switch this to GL/glut.h
 int w, h;
-const int font=(int)GLUT_BITMAP_9_BY_15;
+const int font = (int)GLUT_BITMAP_9_BY_15;
 
 char batteryLevelString[30]; 
 char batteryPercentString[30]; 
-double batteryLevel;
+double cflieBatteryLevel;
 double batteryPercent;
 char batteryStateString[30]; 
-float batteryState;
+float cflieBatteryState;
 
 char pressureString[30]; 
 char temperatureString[30]; 
-float pressure;
-float temperature;
+float cfliePressure;
+float cflieTemperature;
 char accelerationString[30]; 
 char altitudeString[30]; 
-float accX;
-float accY;
-float accZ;
-float altitude;
+float cflieAccX;
+float cflieAccY;
+float cflieAccZ;
+float cflieAltitude;
 
-#define MAXBATTERYLEVEL 4
+#define MAXBATTERYLEVEL 4.0
 
 /*EXTENSION*/
 
@@ -446,24 +446,24 @@ static void display(void){
 
 //Gets the stats and calls redisplay every second
 void update(int value){
-    batteryLevel = (batteryLevel(cflieCopter));
-    sprintf(batteryLevelString, "batteryLevel : %f", batteryLevel );
-    batteryPercent = 100.0 * (batteryLevel / MAXBATTERYLEVEL );
+    cflieBatteryLevel = (batteryLevel(cflieCopter));
+    sprintf(batteryLevelString, "batteryLevel : %f", cflieBatteryLevel );
+    batteryPercent = 100.0 * (cflieBatteryLevel / MAXBATTERYLEVEL );
     sprintf(batteryPercentString, "batteryPercent : %d%%", (int)batteryPercent );
 
-    pressure = pressure(cflieCopter);
-    temperature = temperature(cflieCopter);
-    batteryState = batteryState(cflieCopter);
-    accX = accX(cflieCopter);
-    accY = accY(cflieCopter);
-    accZ = accZ(cflieCopter);
-    altitude = asl(cflieCopter);
+    cfliePressure = pressure(cflieCopter);
+    cflieTemperature = temperature(cflieCopter);
+    cflieBatteryState = batteryState(cflieCopter);
+    cflieAccX = accX(cflieCopter);
+    cflieAccY = accY(cflieCopter);
+    cflieAccZ = accZ(cflieCopter);
+    cflieAltitude = asl(cflieCopter);
 
-    sprintf(batteryStateString, "batteryState : %f", batteryState );
-    sprintf(temperatureString, "temperature : %f", temperature );
-    sprintf(pressureString, "pressure : %f", pressure );
-    sprintf(accelerationString, "acceleration X: %f Y: %f Z: %f", accX, accY, accZ);
-    sprintf(temperatureString, "altitude : %f", altitude );
+    sprintf(batteryStateString, "batteryState : %f", cflieBatteryState );
+    sprintf(temperatureString, "temperature : %f", cflieTemperature );
+    sprintf(pressureString, "pressure : %f", cfliePressure );
+    sprintf(accelerationString, "acceleration X: %f Y: %f Z: %f", cflieAccX, cflieAccY, cflieAccZ );
+    sprintf(temperatureString, "altitude : %f", cflieAltitude );
 
     //1000 ms timer to call update
     glutTimerFunc(1000, update, 0);
@@ -484,7 +484,7 @@ void WriteMemoryToFileOrDie(char* filename, char* data, int len) {
     j = j + i;
   if (j != len) {
     perror("Write file failed\n");
-    exit(-1);2
+    exit(-1);
   }
   fclose(fp);
 }
