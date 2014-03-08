@@ -1,8 +1,8 @@
-batteryLevel : 3.183423
-batteryPercent : 79%
+batteryLevel : 3.208337
+batteryPercent : 80%
 batteryState : 0.000000
 temperature : 0.000000
 pressure : 0.000000
 acceleration X: 1.000000 Y: 1.000000 Z: 1.000000
 altitude : 0.000000
-79.585566
+80.208436
