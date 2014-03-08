@@ -6,7 +6,7 @@ else
   LIBS = -lGL -lGLU -lglut
 endif
 
-sample: sample.o
+extension: extension.o
 	$(CC) $(CFLAGS) -o $@ $< $(LIBS)
 
 .o:.c
